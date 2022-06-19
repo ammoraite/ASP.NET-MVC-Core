@@ -1,4 +1,6 @@
-﻿namespace RazorApp1.Models
+﻿using System.Drawing;
+
+namespace RazorApp1.Models
 {
     public class Catalog
     {

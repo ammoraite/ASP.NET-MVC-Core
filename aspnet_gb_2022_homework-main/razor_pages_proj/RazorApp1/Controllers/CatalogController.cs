@@ -6,18 +6,24 @@ namespace RazorApp1.Controllers
     public class CatalogController : Controller
     {
         private static Catalog _catalog = new();
-
+        
         [HttpGet]
-        public IActionResult Categories()
+        public IActionResult Products( )
         {
             return View(_catalog);
+        }
+
+        [HttpGet]
+        public IActionResult Categories ( )
+        {
+            return View (_catalog);
         }
 
         [HttpPost]
         public IActionResult Categories(Catergory model)
         {
             _catalog.Catergories.Add(model);
-            return View(_catalog);
+            return View (_catalog);
         }
     }
 }
