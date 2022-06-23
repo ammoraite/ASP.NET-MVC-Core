@@ -16,14 +16,24 @@ namespace RazorApp1.Controllers
         [HttpGet]
         public IActionResult Categories ( )
         {
-            return View (_catalog);
+            return View ();
         }
 
         [HttpPost]
-        public IActionResult Categories(Catergory model)
+        public IActionResult Categories(Product productModel,Catergory categoryModel )
         {
-            _catalog.Catergories.Add(model);
-            return View (_catalog);
+            categoryModel.Products.Add(new Product()
+            {
+                ProductId = productModel.ProductId,
+                ProductName = productModel.ProductName
+            });
+            _catalog.Catergories.Add(new Catergory()
+            {
+                CatergoryId = categoryModel.CatergoryId,
+                CatergoryName = categoryModel.CatergoryName,
+                Products = categoryModel.Products
+            });
+            return View ();
         }
     }
 }

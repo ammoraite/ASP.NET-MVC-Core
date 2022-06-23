@@ -6,5 +6,9 @@
 
 @foreach (var cat in Model.Catergories)
 {
-    <div>@cat.Id @cat.Name </div> 
+    <div>@cat.CatergoryId @cat.CatergoryName </div>
+    foreach (var prod in cat.Products)
+    {
+        <div>@prod.ProductId @prod.ProductName</div>
+    }
 }

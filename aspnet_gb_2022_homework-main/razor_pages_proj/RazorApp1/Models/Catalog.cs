@@ -9,7 +9,13 @@ namespace RazorApp1.Models
 
     public class Catergory
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int CatergoryId { get; set; }
+        public string? CatergoryName { get; set; }
+        public List<Product> Products { get; set; } = new();
+    }
+    public class Product
+    {
+        public int ProductId { get; set; }
+        public string? ProductName { get; set; }
     }
 }
