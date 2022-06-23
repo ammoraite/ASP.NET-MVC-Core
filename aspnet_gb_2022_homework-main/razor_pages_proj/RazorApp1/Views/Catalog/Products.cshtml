@@ -1,0 +1,10 @@
+﻿@model Catalog
+
+@{
+    ViewData["Title"] = "Список продуктов";
+}
+
+@foreach (var cat in Model.Catergories)
+{
+    <div>@cat.Id @cat.Name </div> 
+}

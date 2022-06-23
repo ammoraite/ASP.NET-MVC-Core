@@ -1,0 +1,16 @@
+﻿@model Catalog
+
+@{
+    ViewData["Title"] = "Список категорий";
+}
+
+<form method="post">
+
+    Id: <input type="text" name="id" required/>
+    <br/>
+    <br/>
+    Имя: <input type="text" name="name"/>
+    <br/>
+    <br/>
+    <input type="submit" name="submit" value="Создать"/>
+</form>
