@@ -5,25 +5,22 @@ namespace RazorApp1.Controllers
 {
     public class CatalogController : Controller
     {
-        private static Catalog _catalog = new();
-        
-        [HttpGet]
-        public IActionResult Products( )
-        {
-            return View(_catalog);
-        }
-
         [HttpGet]
         public IActionResult Categories ( )
         {
-            return View (_catalog);
+            return View (Catalog.Products);
         }
 
-        [HttpPost]
-        public IActionResult Categories(Catergory model)
+        [HttpGet]
+        public IActionResult AddProduct ( Product productModel)
         {
-            _catalog.Catergories.Add(model);
-            return View (_catalog);
+            if (productModel.NameCategory!=null&& 
+                productModel.NameProduct!=null&&
+                productModel.PriseProduct>=0)
+            {
+                Catalog.Products.Add (productModel);
+            }
+            return View();
         }
     }
 }
