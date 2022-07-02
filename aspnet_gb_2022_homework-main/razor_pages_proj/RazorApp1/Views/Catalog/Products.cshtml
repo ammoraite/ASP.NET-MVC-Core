@@ -1,4 +1,4 @@
-﻿@model Catalog
+﻿@model ProductCatalog
 
 @{
     ViewData["Title"] = "Список продуктов";
@@ -6,9 +6,12 @@
 
 @foreach (var cat in Model.Catergories)
 {
-    <div>@cat.CatergoryId @cat.CatergoryName </div>
+    <br/>
+    <div>Категория- ID: @cat.ProductCatergoryId Имя: @cat.ProductCatergoryName </div>
     foreach (var prod in cat.Products)
     {
-        <div>@prod.ProductId @prod.ProductName</div>
+        <br/>
+        <div>Продукт- ID:@prod.ProductId Имя: @prod.ProductName Цена: @prod.Prise</div>
     }
+    <br/>
 }

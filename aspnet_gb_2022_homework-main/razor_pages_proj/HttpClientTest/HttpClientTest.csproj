@@ -7,18 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AmmoraiteCollections\AmmoraiteCollections.csproj" />
     <ProjectReference Include="..\Interfases\Interfases.csproj" />
+    <ProjectReference Include="..\RazorApp1\RazorApp1.csproj" />
   </ItemGroup>
 
 </Project>

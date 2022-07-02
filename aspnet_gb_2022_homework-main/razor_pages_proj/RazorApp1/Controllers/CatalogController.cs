@@ -1,39 +1,76 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
+
 using RazorApp1.Models;
 
 namespace RazorApp1.Controllers
 {
     public class CatalogController : Controller
     {
-        private static Catalog _catalog = new();
-        
+        public static ProductCatalog _catalog = new ( );
+
         [HttpGet]
-        public IActionResult Products( )
+        public IActionResult Products ( )
         {
-            return View(_catalog);
+            return View (_catalog);
         }
 
         [HttpGet]
-        public IActionResult Categories ( )
+        public IActionResult AddProduct ( )
         {
-            return View ();
+            return View ( );
         }
 
         [HttpPost]
-        public IActionResult Categories(Product productModel,Catergory categoryModel )
+        public IActionResult AddProduct
+        (
+            int ProductCatergoryId,
+            string ProductCatergoryName,
+            int ProductId,
+            string ProductName,
+            int Prise
+            )
+
         {
-            categoryModel.Products.Add(new Product()
-            {
-                ProductId = productModel.ProductId,
-                ProductName = productModel.ProductName
-            });
-            _catalog.Catergories.Add(new Catergory()
-            {
-                CatergoryId = categoryModel.CatergoryId,
-                CatergoryName = categoryModel.CatergoryName,
-                Products = categoryModel.Products
-            });
-            return View ();
+            new Task (( ) =>
+             {
+                 ProductCategory productCategory = new ProductCategory
+                 {
+                     ProductCatergoryName=ProductCatergoryName,
+                     ProductCatergoryId=ProductCatergoryId
+                 };
+                 Product prod = new Product
+                 {
+                     ProductId=ProductId,
+                     ProductName=ProductName,
+                     Prise=Prise
+                 };
+
+                 if (_catalog.ContainsCategory(productCategory))
+                 {
+                     foreach (var category in _catalog.Catergories.Where(x=> _catalog.ContainsCategory (productCategory)))
+                     {
+                         if (category.ContainsProduct(prod))
+                         {
+                             foreach (var product in category.Products.Where(x=> category.ContainsProduct (prod)))
+                             {
+                                 product.Prise = prod.Prise;
+                             }
+                         }
+                         else
+                         {
+                             category.Products.Add(prod);
+                         }
+                     }
+                 }
+                 else
+                 {
+                     productCategory.Products.Add(prod);
+                     _catalog.Catergories.Add(productCategory);
+                 }
+             }).Start ( );
+
+            return View ( );
         }
     }
 }
