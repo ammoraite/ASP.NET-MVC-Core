@@ -1,0 +1,17 @@
+﻿@model ProductCatalog
+
+@{
+    ViewData["Title"] = "Список продуктов";
+}
+
+@foreach (var cat in Model.Catergories)
+{
+    <br/>
+    <div>Категория- ID: @cat.ProductCatergoryId Имя: @cat.ProductCatergoryName </div>
+    foreach (var prod in cat.Products)
+    {
+        <br/>
+        <div>Продукт- ID:@prod.ProductId Имя: @prod.ProductName Цена: @prod.Prise</div>
+    }
+    <br/>
+}
