@@ -1,0 +1,12 @@
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\bin\Debug\net6.0\AmmoraiteCollections.deps.json
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\bin\Debug\net6.0\AmmoraiteCollections.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\bin\Debug\net6.0\AmmoraiteCollections.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.csproj.AssemblyReference.cache
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.AssemblyInfoInputs.cache
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.AssemblyInfo.cs
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.csproj.CoreCompileInputs.cache
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\refint\AmmoraiteCollections.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\AmmoraiteCollections.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\AmmoraiteCollections\obj\Debug\net6.0\ref\AmmoraiteCollections.dll
