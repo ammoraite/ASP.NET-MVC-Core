@@ -4,12 +4,11 @@
     {
         private Queue<Task> _tasks { get; set; }
         public int Size { get => _tasks.Count; }
-        TaskFactory TaskFactory { get; set; } = new TaskFactory ( );
         public bool StopWork { get; set; } = false;
         private object _lock = new object ( );
 
         public AutoResetEvent _WorkingEvent = new (true);
-        public TasksQueue ( int size )
+        public TasksQueue ( int size=100 )
         {
             _tasks=new Queue<Task> (size);
         }

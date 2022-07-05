@@ -1,8 +1,8 @@
-﻿namespace Interfases.CatalogInterfaces
+﻿namespace Interfases
 {
-    public interface IproductCatalog : ICatalog<IProductCategory>
+    public interface IproductCatalog : ICatalog<IProduct>
     {
-        public bool ContainsCategory ( IProductCategory category );
+        public bool ContainsProduct ( IProduct product );
 
     }
 }
