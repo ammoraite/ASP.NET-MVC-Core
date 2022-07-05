@@ -11,6 +11,10 @@
           "AmmoraiteCollections": "1.0.0",
           "Interfases": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.6",
+<<<<<<< HEAD
+=======
+          "RazorApp1.Models": "1.0.0",
+>>>>>>> Update_Collection
           "Swashbuckle.AspNetCore": "6.3.0",
           "System.Drawing.Common": "6.0.0"
         },
@@ -2058,6 +2062,17 @@
         "runtime": {
           "Interfases.dll": {}
         }
+<<<<<<< HEAD
+=======
+      },
+      "RazorApp1.Models/1.0.0": {
+        "dependencies": {
+          "Interfases": "1.0.0"
+        },
+        "runtime": {
+          "RazorApp1.Models.dll": {}
+        }
+>>>>>>> Update_Collection
       }
     }
   },
@@ -3154,6 +3169,14 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+<<<<<<< HEAD
+=======
+    },
+    "RazorApp1.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+>>>>>>> Update_Collection
     }
   }
 }

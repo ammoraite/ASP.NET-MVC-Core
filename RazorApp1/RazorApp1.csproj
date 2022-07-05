@@ -19,6 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\AmmoraiteCollections\AmmoraiteCollections.csproj" />
     <ProjectReference Include="..\Interfases\Interfases.csproj" />
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\RazorApp1.Models\RazorApp1.Models.csproj" />
+>>>>>>> Update_Collection
   </ItemGroup>
 
 </Project>

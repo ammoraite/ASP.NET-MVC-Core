@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "oSHH5e4JSM2bbQ4IycPloJrC84a7OOpl9Ogz1qEnI2PPT7kLZnSN0JALlkEiSOZtJG73RrZItOCoSZgWSwO5/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\Interfases\\Interfases.csproj",
+=======
+  "dgSpecHash": "zVTYesfnvQlF1Hopbj4z3SB5imigZ+XnFW5+1Sc9o86tJEJcjvJ404Q+1VIwDw55xrtG5Il9qw7iBnOZLEevLg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\Interfases\\Interfases.csproj",
+>>>>>>> Update_Collection
   "expectedPackageFiles": [],
   "logs": []
 }

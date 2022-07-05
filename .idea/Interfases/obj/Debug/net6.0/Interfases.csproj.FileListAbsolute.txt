@@ -1,0 +1,30 @@
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\bin\Debug\net6.0\Interfases.deps.json
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\bin\Debug\net6.0\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\bin\Debug\net6.0\Interfases.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\bin\Debug\net6.0\AmmoraiteCollections.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\bin\Debug\net6.0\AmmoraiteCollections.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.csproj.AssemblyReference.cache
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.AssemblyInfoInputs.cache
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.AssemblyInfo.cs
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.csproj.CoreCompileInputs.cache
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.csproj.CopyComplete
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\refint\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\Interfases.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Новая папка\aspnet_gb_2022_homework-main\razor_pages_proj\Interfases\obj\Debug\net6.0\ref\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\bin\Debug\net6.0\Interfases.deps.json
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\bin\Debug\net6.0\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\bin\Debug\net6.0\Interfases.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\bin\Debug\net6.0\AmmoraiteCollections.dll
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\bin\Debug\net6.0\AmmoraiteCollections.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.csproj.AssemblyReference.cache
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.AssemblyInfoInputs.cache
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.AssemblyInfo.cs
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.csproj.CoreCompileInputs.cache
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.csproj.CopyComplete
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\refint\Interfases.dll
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\Interfases.pdb
+C:\Users\valer\OneDrive\Рабочий стол\Дз MVc Core\дз2\Interfases\obj\Debug\net6.0\ref\Interfases.dll

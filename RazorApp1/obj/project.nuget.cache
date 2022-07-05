@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "D/mr7a99E/cjIlD4vNgjmNaNSe9UeQO7FjD6R0SFEgHYAM5ZT8+v45d3cXJzNUMrh/Z89uifwLsTkilRbcaIjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\RazorApp1\\RazorApp1.csproj",
+=======
+  "dgSpecHash": "ADklNYErVh6zHuZweWCz4H/YYvUyheTxV/a14KMBdM7JXdKkFK20uW4wM2Xv6pIZ0UyBz/BJ6u1CMu/pYFJ3Bw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\RazorApp1\\RazorApp1.csproj",
+>>>>>>> Update_Collection
   "expectedPackageFiles": [
     "C:\\Users\\valer\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\valer\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

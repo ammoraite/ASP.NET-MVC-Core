@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "SgF/VLzlkp1awClLQCWR/S85hyiumg2V47QTLcHr/dwIWYQXvQPnwFwEYiDRyOb61Fb1uOgzGAQRlC7Mlv6DMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\AmmoraiteCollections\\AmmoraiteCollections.csproj",
+=======
+  "dgSpecHash": "u9biCUx+cvrE4ZHH8taCbnVWl8CzCZu+J7GwJ/Bd7StI/4eJAZnlh3JezY33B+Tm/DwVYqBPRVk+GcIVf1DtJg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\AmmoraiteCollections\\AmmoraiteCollections.csproj",
+>>>>>>> Update_Collection
   "expectedPackageFiles": [],
   "logs": []
 }

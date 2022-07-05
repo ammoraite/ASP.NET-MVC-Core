@@ -2861,6 +2861,22 @@
         "runtime": {
           "bin/placeholder/Interfases.dll": {}
         }
+<<<<<<< HEAD
+=======
+      },
+      "RazorApp1.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Interfases": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RazorApp1.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RazorApp1.Models.dll": {}
+        }
+>>>>>>> Update_Collection
       }
     }
   },
@@ -8858,6 +8874,14 @@
       "type": "project",
       "path": "../Interfases/Interfases.csproj",
       "msbuildProject": "../Interfases/Interfases.csproj"
+<<<<<<< HEAD
+=======
+    },
+    "RazorApp1.Models/1.0.0": {
+      "type": "project",
+      "path": "../RazorApp1.Models/RazorApp1.Models.csproj",
+      "msbuildProject": "../RazorApp1.Models/RazorApp1.Models.csproj"
+>>>>>>> Update_Collection
     }
   },
   "projectFileDependencyGroups": {
@@ -8865,6 +8889,10 @@
       "AmmoraiteCollections >= 1.0.0",
       "Interfases >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.6",
+<<<<<<< HEAD
+=======
+      "RazorApp1.Models >= 1.0.0",
+>>>>>>> Update_Collection
       "Swashbuckle.AspNetCore >= 6.3.0",
       "System.Drawing.Common >= 6.0.0"
     ]
@@ -8876,11 +8904,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\RazorApp1\\RazorApp1.csproj",
       "projectName": "RazorApp1",
       "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\RazorApp1\\RazorApp1.csproj",
       "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\RazorApp1\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\RazorApp1\\RazorApp1.csproj",
+      "projectName": "RazorApp1",
+      "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\RazorApp1\\RazorApp1.csproj",
+      "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\RazorApp1\\obj\\",
+>>>>>>> Update_Collection
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8901,11 +8937,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\AmmoraiteCollections\\AmmoraiteCollections.csproj": {
               "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\AmmoraiteCollections\\AmmoraiteCollections.csproj"
             },
             "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\Interfases\\Interfases.csproj": {
               "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Новая папка\\aspnet_gb_2022_homework-main\\razor_pages_proj\\Interfases\\Interfases.csproj"
+=======
+            "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\AmmoraiteCollections\\AmmoraiteCollections.csproj": {
+              "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\AmmoraiteCollections\\AmmoraiteCollections.csproj"
+            },
+            "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\Interfases\\Interfases.csproj": {
+              "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\Interfases\\Interfases.csproj"
+            },
+            "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\RazorApp1.Models\\RazorApp1.Models.csproj": {
+              "projectPath": "C:\\Users\\valer\\OneDrive\\Рабочий стол\\Дз MVc Core\\дз2\\RazorApp1.Models\\RazorApp1.Models.csproj"
+>>>>>>> Update_Collection
             }
           }
         }
@@ -8951,7 +8998,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+>>>>>>> Update_Collection
       }
     }
   }
