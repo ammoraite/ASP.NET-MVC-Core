@@ -1,4 +1,5 @@
-﻿@model ProductCatalog
+﻿@using Interfases
+@model IProduct
 
 @{
     ViewData["Title"] = "Список категорий";
@@ -6,12 +7,6 @@
 
 <form method="post">
 
-    ProductCatergoryId: <input type="text" name="ProductCatergoryId"/>
-    <br/>
-    <br/>
-    ProductCatergoryName: <input type="text" name="ProductCatergoryName"/>
-    <br/>
-    <br/>
     ProductId: <input type="text" name="ProductId"/>
     <br/>
     <br/>

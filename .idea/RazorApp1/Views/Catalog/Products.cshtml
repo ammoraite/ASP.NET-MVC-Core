@@ -1,17 +1,13 @@
-﻿@model ProductCatalog
+﻿@using Interfases
+@model ICatalog<IProduct>
 
 @{
     ViewData["Title"] = "Список продуктов";
 }
 
-@foreach (var cat in Model.Catergories)
+@foreach (var cat in Model.GetCategories())
 {
     <br/>
-    <div>Категория- ID: @cat.ProductCatergoryId Имя: @cat.ProductCatergoryName </div>
-    foreach (var prod in cat.Products)
-    {
-        <br/>
-        <div>Продукт- ID:@prod.ProductId Имя: @prod.ProductName Цена: @prod.Prise</div>
-    }
+    <div>Категория- ID: @cat.ProductId Имя: @cat.ProductName </div>
     <br/>
 }

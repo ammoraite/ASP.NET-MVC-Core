@@ -1,17 +1,34 @@
-﻿using AmmoraiteCollections;
+﻿using System.Collections.Concurrent;
+
+using AmmoraiteCollections;
 
 using Interfases;
-using Interfases.CatalogInterfaces;
 
 namespace RazorApp1.Models
 {
-    public class ProductCatalog : IproductCatalog
+    public class ProductCatalog : ICatalog<IProduct>, IproductCatalog
     {
-        public ConcurrentList<IProductCategory> Catergories { get; set; } = new ( );
-        public bool ContainsCategory ( IProductCategory category ) =>
-            Catergories.Contains (x =>
-                 x!=null&&
-                 x.ProductCatergoryId==category.ProductCatergoryId&&
-                 x.ProductCatergoryName==category.ProductCatergoryName);
+        private ConcurrentDictionary<int, IProduct> Categories { get; set; } = new ( );
+        private TasksQueue CatalogTasks { get; set; }
+
+        public ProductCatalog ( int SiseQueueCatalogTasks )
+        {
+            CatalogTasks=new (SiseQueueCatalogTasks);
+        }
+        public ProductCatalog ( )
+        {
+            CatalogTasks=new ( );
+        }
+        public void AddCategory ( IProduct item ) => CatalogTasks.AddTask (new Task (( ) =>
+                    Categories.AddOrUpdate (item.ProductId, item, ( key, oldValue ) => item=oldValue)));
+        public bool ContainsProduct ( IProduct product )=> Categories.ContainsKey (product.ProductId);
+        public IEnumerable<IProduct> GetCategories ( )
+        {
+            foreach (var item in Categories)
+            {
+                yield return item.Value;
+            }
+        }
+        public void RemoveCategory ( IProduct item ) => CatalogTasks.AddTask (new Task (( ) => Categories.Remove(item.ProductId,out item)));
     }
 }
