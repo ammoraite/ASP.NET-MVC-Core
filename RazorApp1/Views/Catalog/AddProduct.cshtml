@@ -1,0 +1,20 @@
+﻿@using RazorApp1.Models.Entityes
+@model Product
+
+@{
+    ViewData["Title"] = "Список категорий";
+}
+
+<form method="post">
+
+    ProductId: <input type="text" name="ProductId"/>
+    <br/>
+    <br/>
+    ProductName: <input type="text" name="ProductName"/>
+    <br/>
+    <br/>
+    Prise: <input type="text" name="Prise"/>
+    <br/>
+    <br/>
+    <input type="submit" name="text" value="Создать"/>
+</form>
