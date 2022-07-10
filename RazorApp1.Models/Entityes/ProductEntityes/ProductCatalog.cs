@@ -31,7 +31,7 @@ namespace RazorApp1.Models
 
         public bool RemoveProductInCatalog ( IProduct product )
         {
-            return Products.TryRemove (product.ProductId, out product);
+            return Products.TryRemove (product.ProductId, out _);
         }
         public IEnumerable<IProduct> GetProductsInCatalog ( )
         {

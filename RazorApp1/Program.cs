@@ -1,11 +1,18 @@
 using System.Text.Json;
 
+using AppInterfases.ServiseIntefaces;
+
+using RazorApp1.Services.EmailService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
-
+builder.Services.Configure<SmtpCredentions> (
+    builder.Configuration.GetSection ("SmtpCredentions"));
+builder.Services.AddSingleton<IEmailSender, BegetEmailSenderService> ( );
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 #endregion
 

@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorApp1", "RazorApp1\Razo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppInterfases", "AppInterfases\AppInterfases.csproj", "{55A33C29-72E3-4247-B26E-D1DC2A8DA068}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentColections", "ConcurrentColections\ConcurrentColections.csproj", "{41CAE8D3-B0F3-4374-A561-CBCCBA2E2A42}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorApp1.Models", "RazorApp1.Models\RazorApp1.Models.csproj", "{C6177CDF-EE43-4F5F-9C31-C60EC25A3120}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{55A33C29-72E3-4247-B26E-D1DC2A8DA068}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55A33C29-72E3-4247-B26E-D1DC2A8DA068}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55A33C29-72E3-4247-B26E-D1DC2A8DA068}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41CAE8D3-B0F3-4374-A561-CBCCBA2E2A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41CAE8D3-B0F3-4374-A561-CBCCBA2E2A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41CAE8D3-B0F3-4374-A561-CBCCBA2E2A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41CAE8D3-B0F3-4374-A561-CBCCBA2E2A42}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C6177CDF-EE43-4F5F-9C31-C60EC25A3120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C6177CDF-EE43-4F5F-9C31-C60EC25A3120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6177CDF-EE43-4F5F-9C31-C60EC25A3120}.Release|Any CPU.ActiveCfg = Release|Any CPU

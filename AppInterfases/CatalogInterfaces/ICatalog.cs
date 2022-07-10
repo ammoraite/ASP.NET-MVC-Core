@@ -1,9 +1,10 @@
-﻿using AmmoraiteCollections;
+﻿
+using System.Collections.Concurrent;
 
 namespace Interfases
 {
-    public interface ICatalog<T>
+    public interface ICatalog<K,V>
     {
-        private ConcurrentList<T> Products { get => Products; set => Products=value; }
+        private ConcurrentDictionary<K,V> Products { get => Products; set => Products=value; }
     }
 }
