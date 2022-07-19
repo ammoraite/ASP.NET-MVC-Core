@@ -1,0 +1,390 @@
+2022-07-19 22:42:10.378 +03:00 [INF] User profile is available. Using 'C:\Users\valer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-19 22:42:10.643 +03:00 [INF] Now listening on: https://localhost:7182
+2022-07-19 22:42:10.646 +03:00 [INF] Now listening on: http://localhost:5182
+2022-07-19 22:42:10.653 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-19 22:42:10.655 +03:00 [INF] Hosting environment: Development
+2022-07-19 22:42:10.657 +03:00 [INF] Content root path: D:\c#\HomeWork\MVc Core\дз5\RazorApp1\
+2022-07-19 22:42:11.175 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/ - -
+2022-07-19 22:42:11.264 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 22:42:11.309 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller RazorApp1.Controllers.HomeController (RazorApp1).
+2022-07-19 22:42:11.328 +03:00 [INF] Executing ViewResult, running view Index.
+2022-07-19 22:42:11.572 +03:00 [INF] Executed ViewResult - view Index executed in 244.9191ms.
+2022-07-19 22:42:11.588 +03:00 [INF] Executed action RazorApp1.Controllers.HomeController.Index (RazorApp1) in 273.2706ms
+2022-07-19 22:42:11.592 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 22:42:11.655 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/ - - - 200 - text/html;+charset=utf-8 483.7786ms
+2022-07-19 22:42:11.678 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 22:42:11.687 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 9.1158ms
+2022-07-19 22:42:11.690 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 22:42:11.718 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.5316ms
+2022-07-19 22:42:12.993 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/Catalog/AddProduct - -
+2022-07-19 22:42:13.000 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:42:13.003 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct() on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 22:42:13.013 +03:00 [INF] Инициализирован BegetEmailSenderService
+2022-07-19 22:42:13.016 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 22:42:13.044 +03:00 [INF] Executed ViewResult - view AddProduct executed in 29.1681ms.
+2022-07-19 22:42:13.047 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 37.6906ms
+2022-07-19 22:42:13.050 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:42:13.054 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/Catalog/AddProduct - - - 200 - text/html;+charset=utf-8 60.6816ms
+2022-07-19 22:42:13.083 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 22:42:13.086 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 2.5988ms
+2022-07-19 22:42:13.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 22:42:13.115 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.3211ms
+2022-07-19 22:42:17.880 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274
+2022-07-19 22:42:17.885 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:42:17.908 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 22:42:18.882 +03:00 [INF] Успешно отправлено сообщение на valera.koltirin@yandex.ru
+2022-07-19 22:42:18.886 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 22:42:18.898 +03:00 [INF] Executed ViewResult - view AddProduct executed in 11.6675ms.
+2022-07-19 22:42:18.902 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 988.3562ms
+2022-07-19 22:42:18.905 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:42:18.910 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274 - 200 - text/html;+charset=utf-8 1029.7805ms
+2022-07-19 22:42:18.987 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 22:42:18.988 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 22:42:18.991 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 4.4271ms
+2022-07-19 22:42:19.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.1022ms
+2022-07-19 22:53:40.975 +03:00 [INF] User profile is available. Using 'C:\Users\valer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-19 22:53:41.268 +03:00 [INF] Now listening on: https://localhost:7182
+2022-07-19 22:53:41.270 +03:00 [INF] Now listening on: http://localhost:5182
+2022-07-19 22:53:41.276 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-19 22:53:41.278 +03:00 [INF] Hosting environment: Development
+2022-07-19 22:53:41.280 +03:00 [INF] Content root path: D:\c#\HomeWork\MVc Core\дз5\RazorApp1\
+2022-07-19 22:53:41.720 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/ - -
+2022-07-19 22:53:41.812 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 22:53:41.857 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller RazorApp1.Controllers.HomeController (RazorApp1).
+2022-07-19 22:53:41.874 +03:00 [INF] Executing ViewResult, running view Index.
+2022-07-19 22:53:42.096 +03:00 [INF] Executed ViewResult - view Index executed in 223.0665ms.
+2022-07-19 22:53:42.112 +03:00 [INF] Executed action RazorApp1.Controllers.HomeController.Index (RazorApp1) in 250.375ms
+2022-07-19 22:53:42.116 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 22:53:42.123 +03:00 [INF] HTTP GET / responded 200 in 344.6681 ms
+2022-07-19 22:53:42.178 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/ - - - 200 - text/html;+charset=utf-8 462.6926ms
+2022-07-19 22:53:42.198 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 22:53:42.206 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 8.1206ms
+2022-07-19 22:53:42.214 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 22:53:42.239 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.1270ms
+2022-07-19 22:53:43.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/Catalog/AddProduct - -
+2022-07-19 22:53:43.892 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:53:43.896 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct() on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 22:53:43.904 +03:00 [INF] Инициализирован BegetEmailSenderService
+2022-07-19 22:53:43.908 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 22:53:43.933 +03:00 [INF] Executed ViewResult - view AddProduct executed in 26.51ms.
+2022-07-19 22:53:43.937 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 35.6155ms
+2022-07-19 22:53:43.939 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:53:43.942 +03:00 [INF] HTTP GET /Catalog/AddProduct responded 200 in 53.4094 ms
+2022-07-19 22:53:43.949 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/Catalog/AddProduct - - - 200 - text/html;+charset=utf-8 63.8904ms
+2022-07-19 22:53:43.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 22:53:43.979 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 3.2840ms
+2022-07-19 22:53:43.990 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 22:53:44.002 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.4335ms
+2022-07-19 22:53:48.900 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274
+2022-07-19 22:53:48.906 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:53:48.929 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 22:53:50.159 +03:00 [INF] Успешно отправлено сообщение на valera.koltirin@yandex.ru
+2022-07-19 22:53:50.162 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 22:53:50.171 +03:00 [INF] Executed ViewResult - view AddProduct executed in 8.6348ms.
+2022-07-19 22:53:50.175 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 1241.3448ms
+2022-07-19 22:53:50.178 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 22:53:50.181 +03:00 [INF] HTTP POST /Catalog/AddProduct responded 200 in 1276.9729 ms
+2022-07-19 22:53:50.188 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274 - 200 - text/html;+charset=utf-8 1287.4331ms
+2022-07-19 22:53:50.500 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 22:53:50.500 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 22:53:50.503 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 3.4127ms
+2022-07-19 22:53:50.517 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.5840ms
+2022-07-19 23:23:37.293 +03:00 [INF] User profile is available. Using 'C:\Users\valer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-19 23:23:37.630 +03:00 [INF] Now listening on: https://localhost:7182
+2022-07-19 23:23:37.633 +03:00 [INF] Now listening on: http://localhost:5182
+2022-07-19 23:23:37.639 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-19 23:23:37.641 +03:00 [INF] Hosting environment: Development
+2022-07-19 23:23:37.643 +03:00 [INF] Content root path: D:\c#\HomeWork\MVc Core\дз5\RazorApp1\
+2022-07-19 23:23:38.318 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/ - -
+2022-07-19 23:23:38.418 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 23:23:38.460 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller RazorApp1.Controllers.HomeController (RazorApp1).
+2022-07-19 23:23:38.477 +03:00 [INF] Executing ViewResult, running view Index.
+2022-07-19 23:23:38.696 +03:00 [INF] Executed ViewResult - view Index executed in 219.5881ms.
+2022-07-19 23:23:38.712 +03:00 [INF] Executed action RazorApp1.Controllers.HomeController.Index (RazorApp1) in 247.1246ms
+2022-07-19 23:23:38.716 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 23:23:38.723 +03:00 [INF] HTTP GET / responded 200 in 345.3510 ms
+2022-07-19 23:23:38.783 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/ - - - 200 - text/html;+charset=utf-8 469.0060ms
+2022-07-19 23:23:38.808 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:23:38.822 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 14.0414ms
+2022-07-19 23:23:38.844 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:23:38.870 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.7662ms
+2022-07-19 23:23:39.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/Catalog/AddProduct - -
+2022-07-19 23:23:39.917 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:23:39.921 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct() on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:23:39.929 +03:00 [INF] Инициализирован BegetEmailSenderService
+2022-07-19 23:23:39.932 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:23:39.953 +03:00 [INF] Executed ViewResult - view AddProduct executed in 20.8414ms.
+2022-07-19 23:23:39.956 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 29.8074ms
+2022-07-19 23:23:39.960 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:23:39.962 +03:00 [INF] HTTP GET /Catalog/AddProduct responded 200 in 48.1192 ms
+2022-07-19 23:23:39.967 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/Catalog/AddProduct - - - 200 - text/html;+charset=utf-8 57.0249ms
+2022-07-19 23:23:39.994 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:23:40.002 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 7.7989ms
+2022-07-19 23:23:40.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:23:40.048 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.5610ms
+2022-07-19 23:23:45.054 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274
+2022-07-19 23:23:45.061 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:23:45.087 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:24:00.163 +03:00 [INF] Успешно отправлено сообщение на valera.koltirin@yandex.ru
+2022-07-19 23:24:38.549 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:24:38.602 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274
+2022-07-19 23:24:38.607 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:24:38.611 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:24:38.611 +03:00 [INF] Executed ViewResult - view AddProduct executed in 80.1966ms.
+2022-07-19 23:24:39.477 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 54385.3205ms
+2022-07-19 23:24:39.558 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:24:40.413 +03:00 [INF] HTTP POST /Catalog/AddProduct responded 200 in 55353.5050 ms
+2022-07-19 23:24:43.405 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274 - 200 - text/html;+charset=utf-8 58350.9442ms
+2022-07-19 23:24:49.994 +03:00 [WRN] Не удалось отправлено сообщение на valera.koltirin@yandex.ru так как Этот хост неизвестен.
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+2022-07-19 23:25:00.544 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:25:00.560 +03:00 [INF] Executed ViewResult - view AddProduct executed in 15.8756ms.
+2022-07-19 23:25:00.563 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 21946.672ms
+2022-07-19 23:25:00.566 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:25:00.569 +03:00 [INF] HTTP POST /Catalog/AddProduct responded 200 in 21961.8412 ms
+2022-07-19 23:25:00.574 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274 - 200 - text/html;+charset=utf-8 21971.9861ms
+2022-07-19 23:25:00.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:25:00.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:25:00.624 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 2.7812ms
+2022-07-19 23:25:00.637 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.0315ms
+2022-07-19 23:25:05.468 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/Catalog/AddProduct - -
+2022-07-19 23:25:05.471 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:25:05.474 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct() on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:25:05.480 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:25:05.492 +03:00 [INF] Executed ViewResult - view AddProduct executed in 11.488ms.
+2022-07-19 23:25:05.495 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 14.7798ms
+2022-07-19 23:25:05.498 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:25:05.500 +03:00 [INF] HTTP GET /Catalog/AddProduct responded 200 in 28.6436 ms
+2022-07-19 23:25:05.506 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/Catalog/AddProduct - - - 200 - text/html;+charset=utf-8 37.7641ms
+2022-07-19 23:25:05.532 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:25:05.534 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 2.5579ms
+2022-07-19 23:25:05.548 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:25:05.557 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.0182ms
+2022-07-19 23:25:10.262 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 278
+2022-07-19 23:25:10.266 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:25:10.269 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:25:30.269 +03:00 [WRN] Не удалось отправлено сообщение на valera.koltirin@yandex.ru так как Этот хост неизвестен.
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+2022-07-19 23:26:08.224 +03:00 [INF] User profile is available. Using 'C:\Users\valer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-19 23:26:08.528 +03:00 [INF] Now listening on: https://localhost:7182
+2022-07-19 23:26:08.530 +03:00 [INF] Now listening on: http://localhost:5182
+2022-07-19 23:26:08.536 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-19 23:26:08.538 +03:00 [INF] Hosting environment: Development
+2022-07-19 23:26:08.539 +03:00 [INF] Content root path: D:\c#\HomeWork\MVc Core\дз5\RazorApp1\
+2022-07-19 23:26:09.075 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/ - -
+2022-07-19 23:26:09.164 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 23:26:09.201 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller RazorApp1.Controllers.HomeController (RazorApp1).
+2022-07-19 23:26:09.217 +03:00 [INF] Executing ViewResult, running view Index.
+2022-07-19 23:26:09.432 +03:00 [INF] Executed ViewResult - view Index executed in 215.8725ms.
+2022-07-19 23:26:09.447 +03:00 [INF] Executed action RazorApp1.Controllers.HomeController.Index (RazorApp1) in 242.3556ms
+2022-07-19 23:26:09.451 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 23:26:09.459 +03:00 [INF] HTTP GET / responded 200 in 327.5332 ms
+2022-07-19 23:26:09.513 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/ - - - 200 - text/html;+charset=utf-8 442.1034ms
+2022-07-19 23:26:09.530 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:26:09.539 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 8.6382ms
+2022-07-19 23:26:09.545 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:26:09.571 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.4279ms
+2022-07-19 23:26:10.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/Catalog/AddProduct - -
+2022-07-19 23:26:10.891 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:26:10.896 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct() on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:26:10.905 +03:00 [INF] Инициализирован BegetEmailSenderService
+2022-07-19 23:26:10.909 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:26:10.936 +03:00 [INF] Executed ViewResult - view AddProduct executed in 27.0291ms.
+2022-07-19 23:26:10.938 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 36.8918ms
+2022-07-19 23:26:10.942 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:26:10.945 +03:00 [INF] HTTP GET /Catalog/AddProduct responded 200 in 57.0529 ms
+2022-07-19 23:26:10.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/Catalog/AddProduct - - - 200 - text/html;+charset=utf-8 65.5535ms
+2022-07-19 23:26:10.979 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:26:10.982 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 3.0653ms
+2022-07-19 23:26:10.994 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:26:11.003 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.1344ms
+2022-07-19 23:26:14.918 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274
+2022-07-19 23:26:14.923 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:26:14.949 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:26:29.062 +03:00 [WRN] Не удалось отправлено сообщение на valera.koltirin@yandex.ru так как Этот хост неизвестен.
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+2022-07-19 23:26:32.527 +03:00 [WRN] Error while sending email. Retrying: 1
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2022-07-19 23:26:44.396 +03:00 [WRN] Не удалось отправлено сообщение на valera.koltirin@yandex.ru так как Этот хост неизвестен.
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+2022-07-19 23:26:48.917 +03:00 [WRN] Error while sending email. Retrying: 2
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2022-07-19 23:26:57.419 +03:00 [WRN] Не удалось отправлено сообщение на valera.koltirin@yandex.ru так как Этот хост неизвестен.
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+2022-07-19 23:27:00.334 +03:00 [WRN] Error while sending email. Retrying: 3
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2022-07-19 23:27:07.827 +03:00 [WRN] Не удалось отправлено сообщение на valera.koltirin@yandex.ru так как Этот хост неизвестен.
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+2022-07-19 23:27:08.493 +03:00 [ERR] There was an error while sending email
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен.
+   at System.Net.NameResolutionPal.ProcessResult(SocketError errorCode, GetAddrInfoExContext* context)
+   at System.Net.NameResolutionPal.GetAddressInfoExCallback(Int32 error, Int32 bytes, NativeOverlapped* overlapped)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetwork(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.Connect(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at MailKit.MailService.Connect(String host, Int32 port, Boolean useSsl, CancellationToken cancellationToken)
+   at RazorApp1.Services.EmailService.BegetEmailSenderService.SendAsync(String email, String subject, String message) in D:\c#\HomeWork\MVc Core\дз5\RazorApp1\Services\EmailService\BegetEmailSenderService.cs:line 47
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2022-07-19 23:27:08.561 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:27:08.606 +03:00 [INF] Executed ViewResult - view AddProduct executed in 90.8764ms.
+2022-07-19 23:27:08.610 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 53655.2889ms
+2022-07-19 23:27:08.613 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:27:08.616 +03:00 [INF] HTTP POST /Catalog/AddProduct responded 200 in 53694.0570 ms
+2022-07-19 23:27:08.621 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274 - 200 - text/html;+charset=utf-8 53703.3837ms
+2022-07-19 23:27:08.666 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:27:08.667 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:27:08.669 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 3.0687ms
+2022-07-19 23:27:08.677 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.5535ms
+2022-07-19 23:39:26.220 +03:00 [INF] User profile is available. Using 'C:\Users\valer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-19 23:39:26.518 +03:00 [INF] Now listening on: https://localhost:7182
+2022-07-19 23:39:26.521 +03:00 [INF] Now listening on: http://localhost:5182
+2022-07-19 23:39:26.533 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-19 23:39:26.534 +03:00 [INF] Hosting environment: Development
+2022-07-19 23:39:26.537 +03:00 [INF] Content root path: D:\c#\HomeWork\MVc Core\дз5\RazorApp1\
+2022-07-19 23:39:26.904 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/ - -
+2022-07-19 23:39:26.996 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 23:39:27.037 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller RazorApp1.Controllers.HomeController (RazorApp1).
+2022-07-19 23:39:27.056 +03:00 [INF] Executing ViewResult, running view Index.
+2022-07-19 23:39:27.286 +03:00 [INF] Executed ViewResult - view Index executed in 230.88ms.
+2022-07-19 23:39:27.302 +03:00 [INF] Executed action RazorApp1.Controllers.HomeController.Index (RazorApp1) in 260.3566ms
+2022-07-19 23:39:27.306 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.HomeController.Index (RazorApp1)'
+2022-07-19 23:39:27.315 +03:00 [INF] HTTP GET / responded 200 in 353.4074 ms
+2022-07-19 23:39:27.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/ - - - 200 - text/html;+charset=utf-8 476.5068ms
+2022-07-19 23:39:27.511 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:39:27.512 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:39:27.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 21.2399ms
+2022-07-19 23:39:27.551 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.1724ms
+2022-07-19 23:39:54.168 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/Catalog/AddProduct - -
+2022-07-19 23:39:54.176 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:39:54.183 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct() on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:39:54.196 +03:00 [INF] Инициализирован BegetEmailSenderService
+2022-07-19 23:39:54.201 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:39:54.228 +03:00 [INF] Executed ViewResult - view AddProduct executed in 27.2163ms.
+2022-07-19 23:39:54.231 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 40.5001ms
+2022-07-19 23:39:54.235 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:39:54.238 +03:00 [INF] HTTP GET /Catalog/AddProduct responded 200 in 64.1891 ms
+2022-07-19 23:39:54.248 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/Catalog/AddProduct - - - 200 - text/html;+charset=utf-8 81.2467ms
+2022-07-19 23:39:54.277 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:39:54.280 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 3.4035ms
+2022-07-19 23:39:54.295 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:39:54.304 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.3605ms
+2022-07-19 23:39:58.607 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274
+2022-07-19 23:39:58.614 +03:00 [INF] Executing endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:39:58.640 +03:00 [INF] Route matched with {action = "AddProduct", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddProduct(RazorApp1.Models.Entityes.Product) on controller RazorApp1.Controllers.CatalogController (RazorApp1).
+2022-07-19 23:39:59.844 +03:00 [INF] Успешно отправлено сообщение на valera.koltirin@yandex.ru
+2022-07-19 23:39:59.849 +03:00 [INF] Executing ViewResult, running view AddProduct.
+2022-07-19 23:39:59.862 +03:00 [INF] Executed ViewResult - view AddProduct executed in 13.3119ms.
+2022-07-19 23:39:59.868 +03:00 [INF] Executed action RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1) in 1220.6234ms
+2022-07-19 23:39:59.871 +03:00 [INF] Executed endpoint 'RazorApp1.Controllers.CatalogController.AddProduct (RazorApp1)'
+2022-07-19 23:39:59.875 +03:00 [INF] HTTP POST /Catalog/AddProduct responded 200 in 1262.1310 ms
+2022-07-19 23:39:59.885 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7182/Catalog/AddProduct application/x-www-form-urlencoded 274 - 200 - text/html;+charset=utf-8 1277.7131ms
+2022-07-19 23:39:59.914 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - -
+2022-07-19 23:39:59.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 3.9056ms
+2022-07-19 23:39:59.928 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7182/_vs/browserLink - -
+2022-07-19 23:39:59.941 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7182/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.6575ms
