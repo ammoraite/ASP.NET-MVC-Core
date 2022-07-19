@@ -1,16 +1,14 @@
 ﻿using System.Collections.Concurrent;
-
-using Interfases;
-using Interfases.CatalogInterfaces;
+using RazorApp1.Models.Entityes;
 
 namespace RazorApp1.Models
 {
     public class ProductCatalog : IproductCatalog
     {
-        private ConcurrentDictionary<int, IProduct> Products = new ( );
+        private ConcurrentDictionary<int, Product> Products = new ( );
 
 
-        public bool ContainsProductInCatalog ( IProduct product )
+        public bool ContainsProductInCatalog ( Product product )
         {
            
                 foreach (var item in Products)
@@ -24,16 +22,16 @@ namespace RazorApp1.Models
 
         }
 
-        public bool AddProductInCatalog ( IProduct product )
+        public bool AddProductInCatalog ( Product product )
         {
            return Products.TryAdd (product.ProductId, product);
         }
 
-        public bool RemoveProductInCatalog ( IProduct product )
+        public bool RemoveProductInCatalog ( Product product )
         {
             return Products.TryRemove (product.ProductId, out _);
         }
-        public IEnumerable<IProduct> GetProductsInCatalog ( )
+        public IEnumerable<Product> GetProductsInCatalog ( )
         {
             foreach (var item in Products)
             {
