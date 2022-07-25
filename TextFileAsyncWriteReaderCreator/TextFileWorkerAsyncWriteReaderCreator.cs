@@ -47,7 +47,7 @@ namespace TextFileAsyncWriteReaderCreator
                 {
                     if (File.Exists (item))
                     {
-                        var sringbuilder = new StringBuilder ( );
+                        StringBuilder sringbuilder = new ( );
 
                         using (var streamReader = new StreamReader (item))
                         {
@@ -61,7 +61,7 @@ namespace TextFileAsyncWriteReaderCreator
                                 }
                                 if (sringbuilder.ToString ( ).Length>0)
                                 {
-                                    sringbuilder.Append (a+"\n");
+                                    sringbuilder.Append (a).Append ('\n');
                                 }
                                 sringbuilder.Append (a);
 
@@ -85,7 +85,7 @@ namespace TextFileAsyncWriteReaderCreator
         /// <returns></returns>
         public async Task CreateFilesAsync ( params FileInfo[] fileInfos )
         {
-            await Task.Run (async ( ) =>
+            await Task.Run (( ) =>
             {
                 foreach (var file in fileInfos)
                 {

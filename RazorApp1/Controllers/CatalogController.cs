@@ -10,14 +10,13 @@ namespace RazorApp1.Controllers
 {
     public class CatalogController : Controller
     {
-        private static ProductCatalog _catalog = new ( );
-        IEmailSender _emailSender;
-        ILogger _logger;
+        private static readonly ProductCatalog _catalog = new ( );
+        private IEmailSender _emailSender;
+        private ILogger<IEmailSender> _logger;
         public CatalogController ( IEmailSender emailSender, ILogger<IEmailSender> logger )
         {
-            _logger=logger;
-            _emailSender=emailSender;
-
+            _logger=logger??throw new ArgumentNullException(nameof(logger));
+            _emailSender=emailSender??throw new ArgumentNullException (nameof (emailSender));
         }
 
         [HttpGet]
@@ -37,12 +36,17 @@ namespace RazorApp1.Controllers
         {
             try
             {
-                if (_catalog.AddProductInCatalog (product))
+
+                if (product is not null&&_catalog.AddProductInCatalog (product))
                 {
                     await Task.Run(()=> _emailSender.SendBegetEmailPoliticAsync (
                     "valera.koltirin@yandex.ru",
                     "AddNewProduct",
                     $"добавлен новый продукт ID:{product.ProductId} Name:{product.ProductName} Prise:{product.Prise}"));
+                }
+                else if(product is null)
+                {
+                    throw new NullReferenceException (nameof (product));
                 }
             }
             catch (Exception e)
