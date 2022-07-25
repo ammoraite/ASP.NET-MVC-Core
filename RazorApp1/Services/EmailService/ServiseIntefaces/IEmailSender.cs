@@ -1,8 +1,8 @@
 ﻿namespace RazorApp1.Services.EmailService.ServiseIntefaces
 {
-    public interface IEmailSender
+    public interface IEmailSender: IAsyncDisposable
     {
-        public Task SendAsync ( string email, string subject, string message);
-        public Task SendBegetEmailPoliticAsync ( string email, string subject, string message );
+        public Task SendAsync ( string email, string subject, string message, CancellationToken cancellationToken );
+        public Task SendBegetEmailPoliticAsync ( string email, string subject, string message , CancellationToken cancellationToken );
     }
 }

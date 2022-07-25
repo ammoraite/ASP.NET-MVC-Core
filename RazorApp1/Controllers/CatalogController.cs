@@ -32,17 +32,24 @@ namespace RazorApp1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct ( Product product )
+        public async Task<IActionResult> AddProduct ( Product product , CancellationToken cancellationToken )
         {
             try
             {
+                
 
-                if (product is not null&&_catalog.AddProductInCatalog (product))
+                if (product is not null
+                    &&_catalog.AddProductInCatalog (product, cancellationToken)
+                    &&!(cancellationToken.IsCancellationRequested))
                 {
                     await Task.Run(()=> _emailSender.SendBegetEmailPoliticAsync (
                     "valera.koltirin@yandex.ru",
                     "AddNewProduct",
-                    $"добавлен новый продукт ID:{product.ProductId} Name:{product.ProductName} Prise:{product.Prise}"));
+                    $"добавлен новый продукт " +
+                    $"ID:{product.ProductId} " +
+                    $"Name:{product.ProductName} " +
+                    $"Prise:{product.Prise}",
+                    cancellationToken));
                 }
                 else if(product is null)
                 {

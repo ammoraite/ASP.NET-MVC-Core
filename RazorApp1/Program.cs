@@ -1,5 +1,6 @@
 
 using RazorApp1.Services.EmailService;
+using RazorApp1.Services.EmailService.BackgroundService;
 using RazorApp1.Services.EmailService.ServiseIntefaces;
 
 using Serilog;
@@ -34,7 +35,8 @@ try
         builder.Configuration.GetSection ("EmailCredentions"));
 
     // Add services to the container.
-    builder.Services.AddSingleton<IEmailSender, BegetEmailSenderService> ( );
+    builder.Services.AddSingleton<IEmailSender, EmailSenderService> ( );
+    builder.Services.AddHostedService<SendMailBackgroundService> ( );
     builder.Services.AddControllersWithViews ( );
 
     var app = builder.Build ( );

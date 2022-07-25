@@ -1,4 +1,6 @@
-﻿using MailKit.Net.Smtp;
+﻿using System.Net.Mail;
+
+using MailKit.Net.Smtp;
 
 using Microsoft.Extensions.Options;
 
@@ -11,12 +13,13 @@ using RazorApp1.Services.EmailService.ServiseIntefaces;
 
 namespace RazorApp1.Services.EmailService
 {
-    public class BegetEmailSenderService : IEmailSender
+    public class EmailSenderService : IEmailSender
     {
-        private readonly ILogger<BegetEmailSenderService>? _logger;
+        private readonly ILogger<EmailSenderService>? _logger;
         private readonly SmtpCredentions? _smtpCredentions;
-        public EmailCredentions? _emailCredentions;
-        public BegetEmailSenderService ( IOptions<EmailCredentions> Emailoptions, IOptions<SmtpCredentions> Smtpoptions, ILogger<BegetEmailSenderService> logger )
+        private readonly EmailCredentions? _emailCredentions;
+        private readonly MailKit.Net.Smtp.SmtpClient _smtpClient = new ( );
+        public EmailSenderService ( IOptions<EmailCredentions> Emailoptions, IOptions<SmtpCredentions> Smtpoptions, ILogger<EmailSenderService> logger )
         {
             try
             {
@@ -37,7 +40,16 @@ namespace RazorApp1.Services.EmailService
             }
         }
 
-        public async Task SendAsync ( string email, string subject, string message )
+        public async ValueTask DisposeAsync ( )
+{
+            if (_smtpClient.IsConnected)
+{
+                await _smtpClient.DisconnectAsync (true);
+}
+            _smtpClient.Dispose ( );
+        }
+
+        public async Task SendAsync ( string email, string subject, string message, CancellationToken cancellationToken )
         {
             await Task.Run (( ) =>
             {
@@ -55,11 +67,10 @@ namespace RazorApp1.Services.EmailService
                             {
                                 Text=message
                             };
-                            using SmtpClient? client = new ( );
-                            client.Connect (_smtpCredentions.Host, 25, false);
-                            client.Authenticate (_smtpCredentions.UserName, _smtpCredentions.Password);
-                            client.Send (emailMessage);
-                            client.Disconnect (true);
+                            _smtpClient.Connect (_smtpCredentions.Host, 25, false,cancellationToken);
+                            _smtpClient.Authenticate (_smtpCredentions.UserName, _smtpCredentions.Password,cancellationToken);
+                            _smtpClient.Send (emailMessage,cancellationToken);
+                            _smtpClient.Disconnect (true);
                             if (_logger is not null)
                             {
                                 _logger.LogInformation ($"Успешно отправлено сообщение на {_emailCredentions.EmailTo}");
@@ -89,39 +100,41 @@ namespace RazorApp1.Services.EmailService
                 }
             });
         }
-        public async Task SendBegetEmailPoliticAsync ( string email, string subject, string message )
+        public async Task SendBegetEmailPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken )
         {
-
-            if (_emailCredentions is not null)
+            if (!(cancellationToken.IsCancellationRequested))
             {
-                if (_smtpCredentions is not null)
+                if (_emailCredentions is not null)
                 {
-                    AsyncRetryPolicy? policy = Policy
-                    .Handle<Exception> ( )
-                    .RetryAsync (_emailCredentions.ReTryCount, onRetry: ( exception, retryAttempt ) =>
+                    if (_smtpCredentions is not null)
                     {
-                        if (_logger is not null)
+                        AsyncRetryPolicy? policy = Policy
+                        .Handle<Exception> ( )
+                        .RetryAsync (_emailCredentions.ReTryCount, onRetry: ( exception, retryAttempt ) =>
                         {
-                            _logger.LogWarning (exception, "Error while sending email. Retrying: {Attempt}", retryAttempt);
-                        }
-                    });
+                            if (_logger is not null)
+                            {
+                                _logger.LogWarning (exception, "Error while sending email. Retrying: {Attempt}", retryAttempt);
+                            }
+                        });
 
-                    PolicyResult? result = await policy.ExecuteAndCaptureAsync (
-                                               ( ) => SendAsync (email, subject, message));
-                    if (result.Outcome==OutcomeType.Failure&&_logger is not null)
+                        PolicyResult? result = await policy.ExecuteAndCaptureAsync (
+                                                   ( ) => SendAsync (email, subject, message, cancellationToken));
+                        if (result.Outcome==OutcomeType.Failure&&_logger is not null)
+                        {
+                            _logger.LogError (result.FinalException, "There was an error while sending email");
+                        }
+                    }
+                    else
                     {
-                        _logger.LogError (result.FinalException, "There was an error while sending email");
+                        throw new NullReferenceException (nameof (_smtpCredentions));
                     }
                 }
                 else
                 {
-                    throw new NullReferenceException (nameof (_smtpCredentions));
+                    throw new NullReferenceException (nameof (_emailCredentions));
                 }
-            }
-            else
-            {
-                throw new NullReferenceException (nameof (_emailCredentions));
-            }
+            }           
         }
     }
 }

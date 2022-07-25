@@ -3,7 +3,7 @@ using RazorApp1.Models.Entityes;
 
 namespace RazorApp1.Models
 {
-    public class ProductCatalog : IproductCatalog
+    public class ProductCatalog : IProductCatalog
     {
         private ConcurrentDictionary<int, Product> Products = new ( );
 
@@ -22,9 +22,9 @@ namespace RazorApp1.Models
 
         }
 
-        public bool AddProductInCatalog ( Product product )
+        public bool AddProductInCatalog ( Product product, CancellationToken cancellationToken )
         {
-           return Products.TryAdd (product.ProductId, product);
+           return !(cancellationToken.IsCancellationRequested) && Products.TryAdd (product.ProductId, product);
         }
 
         public bool RemoveProductInCatalog ( Product product )
