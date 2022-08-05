@@ -1,14 +1,24 @@
 
+using EmailSenderWebApi.Domain.DomainEvents.EventConsumers;
+using EmailSenderWebApi.Models.EmailModels;
+using EmailSenderWebApi.Models.EmailModels.EmailDataEvent;
+using EmailSenderWebApi.Models.EmailModels.EmailDataEvent.Items;
+
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
 using RazorApp1.Services.EmailService;
-using RazorApp1.Services.EmailService.BackgroundService;
 using RazorApp1.Services.EmailService.ServiseIntefaces;
+using RazorApp1.Services.HostedServices;
 
 using Serilog;
 using Serilog.Events;
 
+#pragma warning disable U2U1001 // Stateless classes can be static
 Log.Logger=new LoggerConfiguration ( )
    .WriteTo.Console ( )
    .CreateBootstrapLogger ( ); //означает, что глобальный логер будет заменен на вариант из Host.UseSerilog
+#pragma warning restore U2U1001 // Stateless classes can be static
 Log.Information ("Starting up");
 
 try
@@ -34,9 +44,16 @@ try
     builder.Services.Configure<EmailCredentions> (
         builder.Configuration.GetSection ("EmailCredentions"));
 
+    builder.Services.Configure<OptionsEmailSender> (builder.Configuration.GetSection ("OptionsEmailDataEvent"));
+      
     // Add services to the container.
     builder.Services.AddSingleton<IEmailSender, EmailSenderService> ( );
+
     builder.Services.AddHostedService<SendMailBackgroundService> ( );
+
+    builder.Services.AddHostedService<SenderProductChangedEvent> ( );
+
+
     builder.Services.AddControllersWithViews ( );
 
     var app = builder.Build ( );
@@ -64,7 +81,7 @@ try
     app.MapControllerRoute (
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
-
+    app.UseSerilogRequestLogging ( );
     #endregion
 
     app.Run ( );

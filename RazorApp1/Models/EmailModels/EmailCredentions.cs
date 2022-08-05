@@ -1,4 +1,4 @@
-﻿namespace RazorApp1.Services.EmailService
+﻿namespace EmailSenderWebApi.Models.EmailModels
 {
     public class EmailCredentions
     {
