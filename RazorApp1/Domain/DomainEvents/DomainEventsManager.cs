@@ -19,9 +19,9 @@
             }
         }
 
-        public static Task Raise<IDomainEvent> ( IDomainEvent domainEvent )
+        public static async Task Raise<IDomainEvent> ( IDomainEvent domainEvent )
         {
-            var task = new Task (( ) =>
+            await Task.Run (( ) =>
             {
                 foreach (Delegate handler in _handlers[typeof (IDomainEvent)])
                 {
@@ -30,8 +30,6 @@
                 }
 
             });
-            task.Start ( );
-            return task;
         }
     }
 }

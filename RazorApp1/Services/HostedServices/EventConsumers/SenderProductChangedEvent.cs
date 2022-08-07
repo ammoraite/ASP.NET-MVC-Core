@@ -19,18 +19,16 @@ namespace EmailSenderWebApi.Domain.DomainEvents.EventConsumers
         {
             _options=options??throw new ArgumentNullException (nameof (options));
             _emailSender=emailSender??throw new ArgumentNullException (nameof (emailSender));
-            DomainEventsManager.Register<ProductAddedEvent> (e => SendEmailNotification (e,_options.Value.OptionsAddProduct));
-            DomainEventsManager.Register<ProductRemovedEvent> (e => SendEmailNotification (e, _options.Value.OptionsRemoveProduct));
+            DomainEventsManager.Register<ProductAddedEvent> ( async e =>await SendEmailNotification (e,_options.Value.OptionsAddProduct));
+            DomainEventsManager.Register<ProductRemovedEvent> ( async e =>await  SendEmailNotification (e, _options.Value.OptionsRemoveProduct));
         }
-        public Task SendEmailNotification ( IProductChangedEvent e, IEmailOptions options )
+        public async Task SendEmailNotification ( IProductChangedEvent e, IEmailOptions options )
         {
-            var task = _emailSender.SendBegetEmailPoliticAsync (
+             await _emailSender.SendBegetEmailPoliticAsync (
             options.Mail,
             options.Subject,
             e.EmailMessage,
             e.CancellationToken);
-            task.Start ( );
-            return task;
         }
 
         public Task StartAsync ( CancellationToken cancellationToken )

@@ -2,8 +2,6 @@
 
 using EmailSenderWebApi.Domain.DomainEvents.ChangesInCatalog;
 using EmailSenderWebApi.DomainEvents;
-using EmailSenderWebApi.Models.EmailModels;
-using EmailSenderWebApi.Models.EmailModels.EmailDataEvent;
 
 using RazorApp1.Models.Entityes;
 
@@ -28,16 +26,15 @@ namespace RazorApp1.Models
 
         }
 
-        public Task AddProductInCatalog (Product product, CancellationToken cancellationToken )
+        public Task AddProductInCatalog ( Product product, CancellationToken cancellationToken )
         {
             Task task = DomainEventsManager.Raise (new ProductAddedEvent (product, cancellationToken));
 
-            if (Products.TryAdd (product.ProductId, product))
-            {
-                task.Start ( );
-            }
-            task.Dispose ( );
+            Products.TryAdd (product.ProductId, product);
+
             return task;
+
+
         }
 
         public Task RemoveProductInCatalog ( Product product, CancellationToken cancellationToken )

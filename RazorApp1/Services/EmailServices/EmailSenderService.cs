@@ -17,6 +17,7 @@ namespace RazorApp1.Services.EmailService
         private readonly SmtpCredentions? _smtpCredentions;
         private readonly EmailCredentions? _emailCredentions;
         private readonly MailKit.Net.Smtp.SmtpClient _smtpClient = new ( );
+        private readonly object _locker = new object();
 
         public EmailSenderService (
             IOptions<EmailCredentions> Emailoptions,
@@ -54,9 +55,9 @@ namespace RazorApp1.Services.EmailService
             _smtpClient.Dispose ( );
         }
 
-        private Task Send ( string email, string subject, string message, CancellationToken cancellationToken )
+        private async Task Send ( string email, string subject, string message, CancellationToken cancellationToken )
         {
-            var task = new Task (( ) =>
+            await  Task.Run (( ) =>
             {
                 try
                 {
@@ -76,70 +77,73 @@ namespace RazorApp1.Services.EmailService
                     {
                         Text=message
                     };
-                    if (_smtpCredentions is not null)
+                    lock (_locker)
                     {
-                        _smtpClient.Connect (_smtpCredentions.Host, 25, false, cancellationToken);
-                        _smtpClient.Authenticate (_smtpCredentions.UserName, _smtpCredentions.Password, cancellationToken);
+                        if (_smtpCredentions is not null)
+                        {
+                            _smtpClient.Connect (_smtpCredentions.Host, 25, false, cancellationToken);
+                            _smtpClient.Authenticate (_smtpCredentions.UserName, _smtpCredentions.Password, cancellationToken);
+                        }
+                        else
+                        {
+                            throw new NullReferenceException (nameof (_smtpCredentions));
+                        }
+                        _smtpClient.Send (emailMessage, cancellationToken);
+                        _smtpClient.Disconnect (true, cancellationToken);
                     }
-                    else
-                    {
-                        throw new NullReferenceException (nameof (_smtpCredentions));
-                    }
-                    _smtpClient.Send (emailMessage, cancellationToken);
-                    _smtpClient.Disconnect (true, cancellationToken);
-
                     if (_logger is not null)
                     {
                         var Email = _emailCredentions.EmailTo;
-                        _logger.LogInformation ("Успешно отправлено сообщение на {Email}", Email);
+                        _logger.LogInformation ("Успешно отправлено сообщение на {Email}", email);
                     }
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
                     if (_logger is not null&&_emailCredentions is not null)
                     {
                         var Email = _emailCredentions.EmailTo;
-                        var mes = e.Message;
-                        _logger.LogWarning (e, "Не удалось отправить сообщение на {Email}"+
-                        " так как {mes}", Email, mes);
+                        var mes = ex.Message;
+                        _logger.LogWarning (ex, "Не удалось отправить сообщение на {Email}"+
+                        " так как {mes}", email, mes);
                     }
                     else if (_logger is not null)
                     {
-                        var mes = e.Message;
-                        _logger.LogWarning (e, "Не удалось отправить сообщение так как {mes}", mes);
+                        var mes = ex.Message;
+                        _logger.LogWarning (ex, "Не удалось отправить сообщение так как {mes}", mes);
                     }
                 }
-            }, cancellationToken);
-            task.Start ( );
-            return task;
+
+            },cancellationToken);
+            
         }
         public async Task SendBegetEmailPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken )
-        {
-            if (_emailCredentions is not null)
-            {
-                AsyncRetryPolicy? policy = Policy
-                    .Handle<Exception> ( )
-                    .RetryAsync (_emailCredentions.ReTryCount, onRetry: ( exception, retryAttempt ) =>
-                    {
-                        if (_logger is not null)
-                        {
-                            _logger.LogWarning (exception, "Error while sending email. Retrying: {Attempt}", retryAttempt);
-                        }
-                    });
-
-                PolicyResult? result = await policy.ExecuteAndCaptureAsync (
-                ( ) => Send (email, subject, message, cancellationToken));
-
-
-                if (result.Outcome==OutcomeType.Failure&&_logger is not null)
+        {           
+                if (_emailCredentions is not null)
                 {
-                    _logger.LogError (result.FinalException, "There was an error while sending email");
+                    AsyncRetryPolicy? policy = Policy
+                        .Handle<Exception> ( )
+                        .RetryAsync (_emailCredentions.ReTryCount, onRetry: ( exception, retryAttempt ) =>
+                        {
+                            if (_logger is not null)
+                            {
+                                _logger.LogWarning (exception, "Error while sending email. Retrying: {Attempt}", retryAttempt);
+                            }
+                        });
+
+                    PolicyResult? result =await policy.ExecuteAndCaptureAsync (
+                    ( ) => Send (email, subject, message, cancellationToken));
+
+
+                    if (result.Outcome==OutcomeType.Failure&&_logger is not null)
+                    {
+                        _logger.LogError (result.FinalException, "There was an error while sending email");
+                    }
                 }
-            }
-            else
-            {
-                throw new NullReferenceException (nameof (_emailCredentions));
-            }
+                else
+                {
+                    throw new NullReferenceException (nameof (_emailCredentions));
+                }
+            
         }
     }
 }

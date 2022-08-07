@@ -25,11 +25,11 @@ namespace RazorApp1.Services.HostedServices
             // получаю NullReferenceException в методе _smtpClient.Send (emailMessage,cancellationToken);
             EmailSender=new (Emailoptions, Smtpoptions, loggerEmailSender);
         }
-        public Task StartAsync ( CancellationToken stoppingToken )
+        public  Task StartAsync ( CancellationToken stoppingToken )
         {
-            var t = new Task (async ( ) =>
-            {
-                using var timer = new PeriodicTimer (TimeSpan.FromHours (1));
+               Task.Run ( async ( ) =>
+                {
+                using var timer = new PeriodicTimer (TimeSpan.FromSeconds (15));
                 Stopwatch sw = Stopwatch.StartNew ( );
                 while (await timer.WaitForNextTickAsync (stoppingToken))
                 {
@@ -52,15 +52,7 @@ namespace RazorApp1.Services.HostedServices
                     _logger.LogInformation ("сообщение о работе сервера отправлено за {elapsedTime}", elapsedTime);
                 }
             });
-            try
-            {
-                t.Start ( );
-            }
-            catch (Exception e)
-            {
-                _logger.LogWarning (e, "неудалось отправить собщение о работе сервера так как {e.Message}", e.Message);
-            }
-            return t;
+            return Task.CompletedTask;
         }
 
         public async Task StopAsync ( CancellationToken cancellationToken )
