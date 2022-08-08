@@ -1,6 +1,5 @@
 ﻿
 using EmailSenderWebApi.DomainEvents;
-using EmailSenderWebApi.Models.EmailModels.EmailDataEvent;
 
 using RazorApp1.Models.Entityes;
 

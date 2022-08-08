@@ -2,18 +2,15 @@
 {
     public static class DomainEventsManager
     {
-        private static readonly Dictionary<Type, List<Delegate>> _handlers = new ( );
-
-
-        public static void Register<IDomainEvent> ( Action<IDomainEvent> eventHandler )
+        private static  Dictionary<Type,List<Delegate>> _handlers = new ( );
+        public static void Register<IDomainEvent> (Action<IDomainEvent> eventHandler )
         {
             try
-            {
-                _handlers[typeof (IDomainEvent)].Add (eventHandler);
+            {              
+                _handlers[typeof (IDomainEvent)].Add (eventHandler);              
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
                 _handlers[typeof (IDomainEvent)]=new ( );
                 _handlers[typeof (IDomainEvent)].Add (eventHandler);
             }

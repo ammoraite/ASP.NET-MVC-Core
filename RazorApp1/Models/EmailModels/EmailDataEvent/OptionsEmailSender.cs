@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using EmailSenderWebApi.Models.EmailModels.EmailDataEvent.Items;
-
-using Microsoft.Extensions.Options;
+﻿using EmailSenderWebApi.Models.EmailModels.EmailDataEvent.Items;
 
 namespace EmailSenderWebApi.Models.EmailModels.EmailDataEvent
 {
-    public class OptionsEmailSender 
+    public class OptionsEmailSender
     {
         public EmailOptionsAddProduct OptionsAddProduct { get; set; }
 

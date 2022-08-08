@@ -1,22 +1,16 @@
-﻿
-using EmailSenderWebApi.Domain.DomainEvents.EventConsumers;
-using EmailSenderWebApi.Models.EmailModels;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Mvc;
 
 using RazorApp1.Models;
 using RazorApp1.Models.Entityes;
-using RazorApp1.Services.EmailService.ServiseIntefaces;
 
 namespace RazorApp1.Controllers
 {
     public class CatalogController : Controller
     {
-        public static ProductCatalog _catalog = new ( );
+        
         private readonly ILogger<CatalogController> _logger;
-
-        public CatalogController ( ILogger<CatalogController> logger)
+        private static ProductCatalog _catalog = new ();
+        public CatalogController ( ILogger<CatalogController> logger, ILogger<ProductCatalog> loggerCat )
         {
             _logger=logger??throw new ArgumentNullException (nameof (logger));
         }
@@ -39,11 +33,15 @@ namespace RazorApp1.Controllers
         {
             try
             {
-                await _catalog.AddProductInCatalog (product, cancellationToken);        
+                await _catalog.AddProductInCatalog (product, cancellationToken);
+                _logger.LogInformation ("Добавлен товар в каталог {product}",
+                    product.ProductName);
+                
             }
             catch (Exception e)
             {
-                _logger.LogWarning (e, "");
+                _logger.LogWarning (e, "Не удалось добавить товар в каталог {product}",
+                    nameof(product));
             }
             return View ( );
         }
@@ -60,10 +58,13 @@ namespace RazorApp1.Controllers
             try
             {
                 await _catalog.RemoveProductInCatalog (product, cancellationToken);
+                _logger.LogInformation ("Товар {product} удален из каталога", product.ProductName);
+
             }
             catch (Exception e)
             {
-                _logger.LogWarning (e, "");
+                _logger.LogWarning (e, "Не удалось удалить товар {product} в каталоге ", product.ProductName);
+
             }
             return View ( );
         }

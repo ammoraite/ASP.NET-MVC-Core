@@ -1,57 +1,49 @@
 ﻿using System.Diagnostics;
 
-using EmailSenderWebApi.Models.EmailModels;
+using EmailSenderWebApi.Domain.DomainEvents.EventConsumers;
 
-using Microsoft.Extensions.Options;
-
-using RazorApp1.Services.EmailService;
+using RazorApp1.Services.EmailService.ServiseIntefaces;
 
 namespace RazorApp1.Services.HostedServices
 {
-    public class SendMailBackgroundService : IHostedService
+    public class SenderMailAppWorkService : IHostedService
     {
-        private readonly ILogger<SendMailBackgroundService> _logger;
-        private EmailSenderService EmailSender { get; set; }
-        public SendMailBackgroundService (
-            IOptions<EmailCredentions> Emailoptions,
-            IOptions<SmtpCredentions> Smtpoptions,
-            ILogger<SendMailBackgroundService> logger,
-            ILogger<EmailSenderService> loggerEmailSender )
+        private readonly ILogger<SenderMailAppWorkService> _logger;
+        private IEmailSender _emailSender { get; set; }
+        public SenderMailAppWorkService ( ILogger<SenderMailAppWorkService> logger, IEmailSender emailSender )
         {
             _logger=logger??throw new NullReferenceException (nameof (logger));
+            _emailSender=emailSender??throw new NullReferenceException (nameof (logger));
 
-            // сделал так потому что если инициализировать через di, то в момент отправки собщения
-            // о добавлении нового продукта 
-            // получаю NullReferenceException в методе _smtpClient.Send (emailMessage,cancellationToken);
-            EmailSender=new (Emailoptions, Smtpoptions, loggerEmailSender);
         }
-        public  Task StartAsync ( CancellationToken stoppingToken )
+        public Task StartAsync ( CancellationToken stoppingToken )
         {
-               Task.Run ( async ( ) =>
-                {
-                using var timer = new PeriodicTimer (TimeSpan.FromHours (1));
-                Stopwatch sw = Stopwatch.StartNew ( );
-                while (await timer.WaitForNextTickAsync (stoppingToken))
-                {
-                    sw.Start ( );
+            Task.Run (async ( ) =>
+             {
+                 using var timer = new PeriodicTimer (TimeSpan.FromHours (1));
+                 Stopwatch sw = Stopwatch.StartNew ( );
+                 while (await timer.WaitForNextTickAsync (stoppingToken))
+                 {
+                     sw.Start ( );
 
-                    await EmailSender.SendBegetEmailPoliticAsync (
-                       "valera.koltirin@yandex.ru",
-                       "Работа сервера",
-                       "сервер работает исправно",
-                       stoppingToken);
+                     await _emailSender.SendBegetEmailPoliticAsync (
+                           "valera.koltirin@yandex.ru",
+                           "Работа сервера",
+                           "сервер работает исправно",
+                           stoppingToken);
 
-                    sw.Stop ( );
+                     sw.Stop ( );
 
-                    TimeSpan ts = sw.Elapsed;
+                     TimeSpan ts = sw.Elapsed;
 
-                    string elapsedTime = string.Format ("{0:00}:{1:00}:{2:00}.{3:00}",
-                        ts.Hours, ts.Minutes, ts.Seconds,
-                        ts.Milliseconds/10);
+                     string elapsedTime = string.Format ("{0:00}:{1:00}:{2:00}.{3:00}",
+                            ts.Hours, ts.Minutes, ts.Seconds,
+                            ts.Milliseconds/10);
 
-                    _logger.LogInformation ("сообщение о работе сервера отправлено за {elapsedTime}", elapsedTime);
-                }
-            });
+                     _logger.LogInformation ("сообщение о работе сервера отправлено за {elapsedTime}", elapsedTime);
+                 }
+             });
+            _logger.LogInformation ("Хост {Type} запущен успешно", typeof (SenderMailAppWorkService).Name);
             return Task.CompletedTask;
         }
 
@@ -59,7 +51,8 @@ namespace RazorApp1.Services.HostedServices
         {
             if (cancellationToken.IsCancellationRequested)
             {
-                await EmailSender.DisposeAsync ( );
+                await _emailSender.DisposeAsync ( );
+                _logger.LogInformation ("Хост {Type} завершил свою работу", typeof (SenderMailAppWorkService).Name);
             }
         }
     }

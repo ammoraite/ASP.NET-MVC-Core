@@ -1,11 +1,6 @@
-
 using EmailSenderWebApi.Domain.DomainEvents.EventConsumers;
 using EmailSenderWebApi.Models.EmailModels;
 using EmailSenderWebApi.Models.EmailModels.EmailDataEvent;
-using EmailSenderWebApi.Models.EmailModels.EmailDataEvent.Items;
-
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 using RazorApp1.Services.EmailService;
 using RazorApp1.Services.EmailService.ServiseIntefaces;
@@ -45,14 +40,14 @@ try
         builder.Configuration.GetSection ("EmailCredentions"));
 
     builder.Services.Configure<OptionsEmailSender> (builder.Configuration.GetSection ("OptionsEmailDataEvent"));
-      
-    // Add services to the container.
-    builder.Services.AddSingleton<IEmailSender, EmailSenderService> ( );
 
-    builder.Services.AddHostedService<SendMailBackgroundService> ( );
+    // Add services to the container.
+
+    builder.Services.AddTransient<IEmailSender, EmailSenderService> ( );
+
+    builder.Services.AddHostedService<SenderMailAppWorkService> ( );
 
     builder.Services.AddHostedService<SenderProductChangedEvent> ( );
-
 
     builder.Services.AddControllersWithViews ( );
 
