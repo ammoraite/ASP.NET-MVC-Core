@@ -16,7 +16,7 @@ namespace RazorApp1.Services.EmailService
         private readonly ILogger<EmailSenderService>? _logger;
         private readonly SmtpCredentions? _smtpCredentions;
         private readonly EmailCredentions? _emailCredentions;
-        private readonly MailKit.Net.Smtp.SmtpClient _smtpClient = new ( );
+        private  MailKit.Net.Smtp.SmtpClient? _smtpClient;
         private readonly object _locker = new object();
 
         public EmailSenderService (
@@ -46,19 +46,21 @@ namespace RazorApp1.Services.EmailService
 
         public async ValueTask DisposeAsync ( )
         {
-            if (_smtpClient.IsConnected)
+            if (_smtpClient is not null)
             {
+                if (_smtpClient.IsConnected)
+                {
 #pragma warning disable U2U1016 // Use a CancellationToken when possible
-                await _smtpClient.DisconnectAsync (true);
+                    await _smtpClient.DisconnectAsync (true);
 #pragma warning restore U2U1016 // Use a CancellationToken when possible
+                }
+                _smtpClient.Dispose ( );
             }
-            _smtpClient.Dispose ( );
         }
 
         private async Task Send ( string email, string subject, string message, CancellationToken cancellationToken )
         {
-            await  Task.Run (( ) =>
-            {
+            _smtpClient=new ( );
                 try
                 {
                     MimeMessage emailMessage = new ( );
@@ -77,20 +79,19 @@ namespace RazorApp1.Services.EmailService
                     {
                         Text=message
                     };
-                    lock (_locker)
-                    {
+                    
                         if (_smtpCredentions is not null)
                         {
-                            _smtpClient.Connect (_smtpCredentions.Host, 25, false, cancellationToken);
-                            _smtpClient.Authenticate (_smtpCredentions.UserName, _smtpCredentions.Password, cancellationToken);
+                          await  _smtpClient.ConnectAsync (_smtpCredentions.Host, 25, false, cancellationToken);
+                          await  _smtpClient.AuthenticateAsync (_smtpCredentions.UserName, _smtpCredentions.Password, cancellationToken);
                         }
                         else
                         {
                             throw new NullReferenceException (nameof (_smtpCredentions));
                         }
-                        _smtpClient.Send (emailMessage, cancellationToken);
-                        _smtpClient.Disconnect (true, cancellationToken);
-                    }
+                       await _smtpClient.SendAsync (emailMessage, cancellationToken);
+                       await _smtpClient.DisconnectAsync (true, cancellationToken);
+                    
                     if (_logger is not null)
                     {
                         var Email = _emailCredentions.EmailTo;
@@ -112,8 +113,6 @@ namespace RazorApp1.Services.EmailService
                         _logger.LogWarning (ex, "Не удалось отправить сообщение так как {mes}", mes);
                     }
                 }
-
-            },cancellationToken);
             
         }
         public async Task SendBegetEmailPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken )
@@ -131,7 +130,7 @@ namespace RazorApp1.Services.EmailService
                         });
 
                     PolicyResult? result =await policy.ExecuteAndCaptureAsync (
-                    ( ) => Send (email, subject, message, cancellationToken));
+                    token => Send (email,subject,message,token), cancellationToken);
 
 
                     if (result.Outcome==OutcomeType.Failure&&_logger is not null)

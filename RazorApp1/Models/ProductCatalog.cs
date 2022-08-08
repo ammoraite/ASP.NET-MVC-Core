@@ -28,25 +28,16 @@ namespace RazorApp1.Models
 
         public Task AddProductInCatalog ( Product product, CancellationToken cancellationToken )
         {
-            Task task = DomainEventsManager.Raise (new ProductAddedEvent (product, cancellationToken));
-
+            DomainEventsManager.Raise (new ProductAddedEvent (product, cancellationToken));
             Products.TryAdd (product.ProductId, product);
-
-            return task;
-
-
+            return Task.CompletedTask;
         }
 
         public Task RemoveProductInCatalog ( Product product, CancellationToken cancellationToken )
         {
-            Task task = DomainEventsManager.Raise (new ProductRemovedEvent (product, cancellationToken));
-
-            if (Products.TryRemove (product.ProductId, out _))
-            {
-                task.Start ( );
-            }
-            task.Dispose ( );
-            return task;
+            DomainEventsManager.Raise (new ProductRemovedEvent (product, cancellationToken));
+            Products.TryRemove (product.ProductId, out _);
+            return Task.CompletedTask;
         }
         public IEnumerable<Product> GetProductsInCatalog ( )
         {

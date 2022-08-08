@@ -24,7 +24,9 @@ namespace EmailSenderWebApi.Domain.DomainEvents.EventConsumers
         }
         public async Task SendEmailNotification ( IProductChangedEvent e, IEmailOptions options )
         {
-             await _emailSender.SendBegetEmailPoliticAsync (
+            _ = options.Mail??throw new NullReferenceException ( );
+            _=options.Subject??throw new NullReferenceException ( );
+            await _emailSender.SendBegetEmailPoliticAsync (
             options.Mail,
             options.Subject,
             e.EmailMessage,

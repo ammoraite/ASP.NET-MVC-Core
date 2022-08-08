@@ -19,17 +19,13 @@
             }
         }
 
-        public static async Task Raise<IDomainEvent> ( IDomainEvent domainEvent )
+        public static void Raise<IDomainEvent> ( IDomainEvent domainEvent )
         {
-            await Task.Run (( ) =>
+            foreach (Delegate handler in _handlers[typeof (IDomainEvent)])
             {
-                foreach (Delegate handler in _handlers[typeof (IDomainEvent)])
-                {
-                    var action = (Action<IDomainEvent>) handler;
-                    action (domainEvent);
-                }
-
-            });
+                var action = (Action<IDomainEvent>) handler;
+                action (domainEvent);
+            }
         }
     }
 }

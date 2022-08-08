@@ -39,8 +39,7 @@ namespace RazorApp1.Controllers
         {
             try
             {
-               await _catalog.AddProductInCatalog (product, cancellationToken);
-        
+                await _catalog.AddProductInCatalog (product, cancellationToken);        
             }
             catch (Exception e)
             {

@@ -29,7 +29,7 @@ namespace RazorApp1.Services.HostedServices
         {
                Task.Run ( async ( ) =>
                 {
-                using var timer = new PeriodicTimer (TimeSpan.FromSeconds (15));
+                using var timer = new PeriodicTimer (TimeSpan.FromHours (1));
                 Stopwatch sw = Stopwatch.StartNew ( );
                 while (await timer.WaitForNextTickAsync (stoppingToken))
                 {
