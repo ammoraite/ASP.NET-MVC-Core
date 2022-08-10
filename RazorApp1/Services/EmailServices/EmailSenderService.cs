@@ -34,7 +34,7 @@ namespace RazorApp1.Services.EmailService
         private async ValueTask ConnectAuthenticateAsync ( )
         {
             _smtpClient=new ( );
-
+            _locker.WaitOne ( );
             if (!_smtpClient.IsConnected)
             {
                await _smtpClient.ConnectAsync (_smtpCredentions.Host, 25, false);
@@ -43,6 +43,7 @@ namespace RazorApp1.Services.EmailService
             {
                await _smtpClient.AuthenticateAsync (_smtpCredentions.UserName, _smtpCredentions.Password);
             }
+            _locker.Set ( );
         }
         private async Task SendMimeEmailMessageAsync ( string email, string subject, string message, CancellationToken cancellationToken )
         {

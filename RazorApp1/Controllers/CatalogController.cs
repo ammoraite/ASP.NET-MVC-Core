@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Concurrent;
+
+using EmailSenderWebApi.Services.CountersServices.ClickCouterService;
+
+using Microsoft.AspNetCore.Mvc;
 
 using RazorApp1.Models;
 using RazorApp1.Models.Entityes;
@@ -7,12 +11,15 @@ namespace RazorApp1.Controllers
 {
     public class CatalogController : Controller
     {
-        
+
         private readonly ILogger<CatalogController> _logger;
-        private static ProductCatalog _catalog = new ();
-        public CatalogController ( ILogger<CatalogController> logger, ILogger<ProductCatalog> loggerCat )
+        private readonly IClickCounter clickCounter;
+        private static ProductCatalog _catalog = new ( );
+        public static ConcurrentDictionary<string, int> PathClickCount;
+        public CatalogController ( ILogger<CatalogController> logger, ILogger<ProductCatalog> loggerCat, IClickCounter clickCounter)
         {
             _logger=logger??throw new ArgumentNullException (nameof (logger));
+            this.clickCounter=clickCounter;
         }
 
         [HttpGet]
@@ -21,6 +28,11 @@ namespace RazorApp1.Controllers
             return View (_catalog);
         }
 
+        [HttpGet]
+        public IActionResult Metrics ( )
+        {
+            return View (clickCounter);
+        }
 
         [HttpGet]
         public IActionResult AddProduct ( )
@@ -36,12 +48,11 @@ namespace RazorApp1.Controllers
                 await _catalog.AddProductInCatalog (product, cancellationToken);
                 _logger.LogInformation ("Добавлен товар в каталог {product}",
                     product.ProductName);
-                
             }
             catch (Exception e)
             {
                 _logger.LogWarning (e, "Не удалось добавить товар в каталог {product}",
-                    nameof(product));
+                    nameof (product));
             }
             return View ( );
         }
