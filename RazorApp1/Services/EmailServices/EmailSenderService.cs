@@ -1,5 +1,7 @@
 ﻿using EmailSenderWebApi.Models.EmailModels;
 
+using MailKit.Net.Smtp;
+
 using Microsoft.Extensions.Options;
 
 using MimeKit;
@@ -16,8 +18,8 @@ namespace RazorApp1.Services.EmailService
         private readonly ILogger<EmailSenderService>? _logger;
         private readonly SmtpCredentions? _smtpCredentions;
         private readonly EmailCredentions? _emailCredentions;
-        private MailKit.Net.Smtp.SmtpClient? _smtpClient;
-        private readonly object _locker = new object ( );
+        private SmtpClient _smtpClient;
+        private readonly AutoResetEvent _locker = new AutoResetEvent (true);
 
         public EmailSenderService (
             IOptions<EmailCredentions> emailoptions,
@@ -27,25 +29,23 @@ namespace RazorApp1.Services.EmailService
             _logger=logger??throw new ArgumentNullException (nameof (logger));
             _smtpCredentions=smtpoptions.Value??throw new ArgumentNullException (nameof (smtpoptions));
             _emailCredentions=emailoptions.Value??throw new ArgumentNullException (nameof (emailoptions));
+            _=ConnectAuthenticateAsync ( );
         }
-
-        public async ValueTask DisposeAsync ( )
-        {
-            if (_smtpClient is not null)
-            {
-                if (_smtpClient.IsConnected)
-                {
-#pragma warning disable U2U1016 // Use a CancellationToken when possible
-                    await _smtpClient.DisconnectAsync (true);
-#pragma warning restore U2U1016 // Use a CancellationToken when possible
-                }
-                _smtpClient.Dispose ( );
-            }
-        }
-
-        private async Task Send ( string email, string subject, string message, CancellationToken cancellationToken )
+        private async ValueTask ConnectAuthenticateAsync ( )
         {
             _smtpClient=new ( );
+
+            if (!_smtpClient.IsConnected)
+            {
+               await _smtpClient.ConnectAsync (_smtpCredentions.Host, 25, false);
+            }
+            if (!_smtpClient.IsAuthenticated)
+            {
+               await _smtpClient.AuthenticateAsync (_smtpCredentions.UserName, _smtpCredentions.Password);
+            }
+        }
+        private async Task SendMimeEmailMessageAsync ( string email, string subject, string message, CancellationToken cancellationToken )
+        {
             try
             {
                 MimeMessage emailMessage = new ( );
@@ -65,18 +65,13 @@ namespace RazorApp1.Services.EmailService
                     Text=message
                 };
 
-                if (_smtpCredentions is not null)
-                {
-                    await _smtpClient.ConnectAsync (_smtpCredentions.Host, 25, false, cancellationToken);
-                    await _smtpClient.AuthenticateAsync (_smtpCredentions.UserName, _smtpCredentions.Password, cancellationToken);
-                }
-                else
-                {
-                    throw new NullReferenceException (nameof (_smtpCredentions));
-                }
-                await _smtpClient.SendAsync (emailMessage, cancellationToken);
-                await _smtpClient.DisconnectAsync (true, cancellationToken);
+                _locker.WaitOne ( );
 
+                await _smtpClient.SendAsync (emailMessage, cancellationToken);
+
+                _locker.Set ( );
+                
+                
                 if (_logger is not null)
                 {
                     var Email = _emailCredentions.EmailTo;
@@ -100,7 +95,7 @@ namespace RazorApp1.Services.EmailService
             }
 
         }
-        public async Task SendBegetEmailPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken )
+        public async Task SendEmailWithPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken )
         {
             if (_emailCredentions is not null)
             {
@@ -115,7 +110,7 @@ namespace RazorApp1.Services.EmailService
                     });
 
                 PolicyResult? result = await policy.ExecuteAndCaptureAsync (
-                token => Send (email, subject, message, token), cancellationToken);
+                token => SendMimeEmailMessageAsync (email, subject, message, token), cancellationToken);
 
 
                 if (result.Outcome==OutcomeType.Failure&&_logger is not null)
@@ -128,6 +123,19 @@ namespace RazorApp1.Services.EmailService
                 throw new NullReferenceException (nameof (_emailCredentions));
             }
 
+        }
+        public async ValueTask DisposeAsync ( )
+        {
+            if (_smtpClient is not null)
+            {
+                if (_smtpClient.IsConnected)
+                {
+#pragma warning disable U2U1016 // Use a CancellationToken when possible
+                    await _smtpClient.DisconnectAsync (true);
+#pragma warning restore U2U1016 // Use a CancellationToken when possible
+                }
+                _smtpClient.Dispose ( );
+            }
         }
     }
 }

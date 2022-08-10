@@ -28,19 +28,23 @@ namespace EmailSenderWebApi.Domain.DomainEvents.EventConsumers
         {
             try
             {
-                _=options.Mail??throw new ArgumentNullException ( );
-                _=options.Subject??throw new ArgumentNullException ( );
-                await _emailSender.SendBegetEmailPoliticAsync (
-                options.Mail,
-                options.Subject,
-                e.EmailMessage,
-                e.CancellationToken);
+                //Проверял на потоко-безопасность
+                //await Parallel.ForEachAsync (Enumerable.Range (0, 10), async ( i, token ) =>
+                //{
+                    _=options.Mail??throw new ArgumentNullException ( );
+                    _=options.Subject??throw new ArgumentNullException ( );
+                    await _emailSender.SendEmailWithPoliticAsync (
+                    options.Mail,
+                    options.Subject/*+i*/,
+                    e.EmailMessage,
+                    e.CancellationToken);
+                //});
+                //await _emailSender.DisposeAsync ( );
             }
             catch (Exception exc)
             {
                 _logger.LogError (exc,"Ошибка отправки email связанное с событием {Type} так как {exc}",nameof(e) );
-            }
-            
+            }           
         }
 
         public Task StartAsync ( CancellationToken cancellationToken )
@@ -48,10 +52,10 @@ namespace EmailSenderWebApi.Domain.DomainEvents.EventConsumers
             try
             {             
                 DomainEventsManager.Register<ProductAddedEvent> (
-                    async pae => await SendEmailAboutChanges (pae, _options.Value.OptionsAddProduct));               
+                    pae => _ = SendEmailAboutChanges (pae, _options.Value.OptionsAddProduct));               
 
                 DomainEventsManager.Register<ProductRemovedEvent> (
-                    async pre => await SendEmailAboutChanges (pre,_options.Value.OptionsRemoveProduct));               
+                     pre => _ = SendEmailAboutChanges (pre,_options.Value.OptionsRemoveProduct));               
 
                 _logger.LogInformation ("Все события связанные с {Type} зарегитрированны",typeof (IProductChangedEvent).Name);
                 _logger.LogInformation ("Хост {Type} запущен успешно", typeof (SenderProductChangedEvent).Name);
@@ -68,7 +72,6 @@ namespace EmailSenderWebApi.Domain.DomainEvents.EventConsumers
         {
             await _emailSender.DisposeAsync ( );
             _logger.LogInformation ("Хост {Type} завершил свою работу", typeof (SenderProductChangedEvent).Name);
-
         }
     }
 }

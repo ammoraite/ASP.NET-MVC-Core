@@ -1,8 +1,10 @@
-﻿namespace EmailSenderWebApi.DomainEvents
+﻿using System.Collections.Concurrent;
+
+namespace EmailSenderWebApi.DomainEvents
 {
     public static class DomainEventsManager
     {
-        private static  Dictionary<Type,List<Delegate>> _handlers = new ( );
+        private static ConcurrentDictionary<Type,List<Delegate>> _handlers = new ( );
         public static void Register<IDomainEvent> (Action<IDomainEvent> eventHandler )
         {
             try

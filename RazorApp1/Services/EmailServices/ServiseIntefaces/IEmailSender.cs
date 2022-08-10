@@ -2,6 +2,6 @@
 {
     public interface IEmailSender : IAsyncDisposable
     {
-        public Task SendBegetEmailPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken );
+        public Task SendEmailWithPoliticAsync ( string email, string subject, string message, CancellationToken cancellationToken );
     }
 }
