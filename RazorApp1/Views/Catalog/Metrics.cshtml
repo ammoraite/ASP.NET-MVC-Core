@@ -1,0 +1,16 @@
+﻿@using EmailSenderWebApi.Services.CountersServices.ClickCouterService;
+
+@model ClickCounter
+
+
+@{
+    ViewData["Title"] = "Список продуктов";
+}
+
+@foreach (var prod in @Model.Count)
+{
+    <br />
+        <div>Путь: "@prod.Key"  Количество переходов: @prod.Value</div>
+    <br/>
+}
+

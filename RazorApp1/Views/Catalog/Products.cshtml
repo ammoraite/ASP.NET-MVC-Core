@@ -1,4 +1,6 @@
-﻿@model ProductCatalog
+﻿@using RazorApp1.Controllers
+@model ProductCatalog 
+
 
 @{
     ViewData["Title"] = "Список продуктов";
@@ -10,3 +12,4 @@
         <div>Продукт- ID:@prod.ProductId Имя: @prod.ProductName Цена: @prod.Prise</div>
     <br/>
 }
+

@@ -1,22 +1,25 @@
-﻿
+﻿using System.Collections.Concurrent;
+
+using EmailSenderWebApi.Services.CountersServices.ClickCouterService;
+
 using Microsoft.AspNetCore.Mvc;
 
 using RazorApp1.Models;
 using RazorApp1.Models.Entityes;
-using RazorApp1.Services.EmailService;
-using RazorApp1.Services.EmailService.ServiseIntefaces;
 
 namespace RazorApp1.Controllers
 {
     public class CatalogController : Controller
     {
-        private static readonly ProductCatalog _catalog = new ( );
-        private IEmailSender _emailSender;
-        private ILogger<IEmailSender> _logger;
-        public CatalogController ( IEmailSender emailSender, ILogger<IEmailSender> logger )
+
+        private readonly ILogger<CatalogController> _logger;
+        private readonly IClickCounter clickCounter;
+        private static ProductCatalog _catalog = new ( );
+        public static ConcurrentDictionary<string, int> PathClickCount;
+        public CatalogController ( ILogger<CatalogController> logger, ILogger<ProductCatalog> loggerCat, IClickCounter clickCounter)
         {
-            _logger=logger??throw new ArgumentNullException(nameof(logger));
-            _emailSender=emailSender??throw new ArgumentNullException (nameof (emailSender));
+            _logger=logger??throw new ArgumentNullException (nameof (logger));
+            this.clickCounter=clickCounter;
         }
 
         [HttpGet]
@@ -26,39 +29,53 @@ namespace RazorApp1.Controllers
         }
 
         [HttpGet]
+        public IActionResult Metrics ( )
+        {
+            return View (clickCounter);
+        }
+
+        [HttpGet]
         public IActionResult AddProduct ( )
         {
             return View ( );
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct ( Product product , CancellationToken cancellationToken )
+        public async Task<IActionResult> AddProduct ( Product product, CancellationToken cancellationToken )
         {
             try
             {
-                
-
-                if (product is not null
-                    &&_catalog.AddProductInCatalog (product, cancellationToken)
-                    &&!(cancellationToken.IsCancellationRequested))
-                {
-                    await Task.Run(()=> _emailSender.SendBegetEmailPoliticAsync (
-                    "valera.koltirin@yandex.ru",
-                    "AddNewProduct",
-                    $"добавлен новый продукт " +
-                    $"ID:{product.ProductId} " +
-                    $"Name:{product.ProductName} " +
-                    $"Prise:{product.Prise}",
-                    cancellationToken));
-                }
-                else if(product is null)
-                {
-                    throw new NullReferenceException (nameof (product));
-                }
+                await _catalog.AddProductInCatalog (product, cancellationToken);
+                _logger.LogInformation ("Добавлен товар в каталог {product}",
+                    product.ProductName);
             }
             catch (Exception e)
             {
-                _logger.LogWarning (e,e.Message);
+                _logger.LogWarning (e, "Не удалось добавить товар в каталог {product}",
+                    nameof (product));
+            }
+            return View ( );
+        }
+
+        [HttpGet]
+        public IActionResult DeleteProduct ( )
+        {
+            return View ( );
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct ( Product product, CancellationToken cancellationToken )
+        {
+            try
+            {
+                await _catalog.RemoveProductInCatalog (product, cancellationToken);
+                _logger.LogInformation ("Товар {product} удален из каталога", product.ProductName);
+
+            }
+            catch (Exception e)
+            {
+                _logger.LogWarning (e, "Не удалось удалить товар {product} в каталоге ", product.ProductName);
+
             }
             return View ( );
         }

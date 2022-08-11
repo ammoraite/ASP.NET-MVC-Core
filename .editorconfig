@@ -56,6 +56,9 @@ csharp_prefer_simple_default_expression = true:suggestion
 csharp_style_prefer_local_over_anonymous_function = true:suggestion
 csharp_style_prefer_index_operator = true:suggestion
 
+# CA1816: Методы Dispose должны вызывать SuppressFinalize
+dotnet_diagnostic.CA1816.severity = none
+
 [*.vb]
 #### Стили именования ####
 
